@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
+  <body>
+    <h1>Favorite Movies</h1>
+    <% if (favorites && favorites.length > 0) { %>
+    <ul>
+      <% favorites.forEach(favorite => { %>
+      <li>
+        <img src="<%= favorite.poster %>" alt="<%= favorite.title %> Poster" />
+        <h2><%= favorite.title %></h2>
+        <p>Year: <%= favorite.year %></p>
+        <p>Type: <%= favorite.type %></p>
+      </li>
+      <% }); %>
+    </ul>
+    <% } else { %>
+    <p>No favorites yet.</p>
+    <% } %>
+  </body>
+</html>
